@@ -155,7 +155,7 @@ Pré-requisito: Node.js 20+.
 ```bash
 cd frontend
 npm install
-cp .env.example .env   # ajuste VITE_API_URL se o backend não estiver em localhost:3001
+cp .env.example .env   
 npm run dev
 ```
 
