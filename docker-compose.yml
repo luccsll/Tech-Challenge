@@ -5,7 +5,7 @@ services:
       - "3001:3001"
     environment:
       - PORT=3001
-      - JWT_SECRET=${JWT_SECRET:-troque-esta-chave-em-producao}
+      - JWT_SECRET=${JWT_SECRET:-a3f9c1e7b2d4508f6a1c9e3d7b0f2a48}
 
   frontend:
     build:
