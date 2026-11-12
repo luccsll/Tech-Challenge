@@ -60,7 +60,8 @@ router.put("/:id", requireRole("professor"), (req, res) => {
   if (title) post.title = title;
   if (content) post.content = content;
   if (author) post.author = author;
-  if (description) post.description = description;
+  // An empty description is a valid edit, so only a missing field is skipped.
+  if (description !== undefined) post.description = description;
 
   res.json(post);
 });
