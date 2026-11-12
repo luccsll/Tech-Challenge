@@ -162,10 +162,21 @@ const comments = [];
 const users = [
   {
     id: "u1",
-    name: "Profa. Marina Souza",
+    nome: "Profa. Marina Souza",
     username: "marina.souza",
+    email: "marina.souza@escola.com",
+    role: "professor",
     passwordHash:
       "$2a$10$zB/vEqsd14367R2DWnoRz.xCBeVnaQrtfQIKaHFHpiIokYF31Ftw2",
+  },
+  {
+    id: "u2",
+    nome: "João Aluno",
+    username: "joao.aluno",
+    email: "joao.aluno@escola.com",
+    role: "aluno",
+    passwordHash:
+      "$2a$10$6Pr5f2CkwQvC2AWixkHAfOh6b3As9O/D0YyRwVG7AjDg4xErHnrly",
   },
 ];
 
