@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { posts, comments, nanoid } = require("../data/store");
-const { requireAuth } = require("../middleware/auth");
+const { requireRole } = require("../middleware/auth");
 
 const router = Router();
 
@@ -30,7 +30,7 @@ router.get("/:id", (req, res) => {
   res.json(post);
 });
 
-router.post("/", requireAuth, (req, res) => {
+router.post("/", requireRole("professor"), (req, res) => {
   const { title, content, author, description } = req.body || {};
 
   if (!title || !content || !author) {
@@ -50,7 +50,7 @@ router.post("/", requireAuth, (req, res) => {
   res.status(201).json(post);
 });
 
-router.put("/:id", requireAuth, (req, res) => {
+router.put("/:id", requireRole("professor"), (req, res) => {
   const post = posts.find((p) => p.id === req.params.id);
   if (!post) {
     return res.status(404).json({ message: "Post não encontrado." });
@@ -65,7 +65,7 @@ router.put("/:id", requireAuth, (req, res) => {
   res.json(post);
 });
 
-router.delete("/:id", requireAuth, (req, res) => {
+router.delete("/:id", requireRole("professor"), (req, res) => {
   const index = posts.findIndex((p) => p.id === req.params.id);
   if (index === -1) {
     return res.status(404).json({ message: "Post não encontrado." });
