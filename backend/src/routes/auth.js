@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { toPublic } = require("../controllers/users");
 const { users } = require("../data/store");
 const { JWT_SECRET } = require("../middleware/auth");
 
@@ -29,16 +30,7 @@ router.post("/login", async (req, res) => {
     { expiresIn: "8h" }
   );
 
-  res.json({
-    token,
-    user: {
-      id: user.id,
-      nome: user.nome,
-      username: user.username,
-      email: user.email,
-      role: user.role,
-    },
-  });
+  res.json({ token, user: toPublic(user) });
 });
 
 module.exports = router;
