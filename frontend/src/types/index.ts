@@ -17,7 +17,7 @@ export interface Comment {
 
 export interface AuthUser {
   id: string;
-  name: string;
+  nome: string;
   username: string;
 }
 

@@ -68,7 +68,7 @@ export function Header() {
           <>
             <NavLink to="/admin">Administração</NavLink>
             <NavLink to="/posts/novo">Nova postagem</NavLink>
-            <span>Olá, {user?.name.split(" ")[0]}</span>
+            <span>Olá, {user?.nome?.split(" ")[0]}</span>
             <LogoutButton onClick={handleLogout}>Sair</LogoutButton>
           </>
         ) : (
