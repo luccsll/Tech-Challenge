@@ -187,7 +187,7 @@ Este é o fluxo que segui para validar a aplicação manualmente:
    sem precisar de um botão "buscar").
 2. **Leitura de um post (`/posts/:id`)** — clico em um card para ler o
    conteúdo completo e a lista de comentários. Ao final da página consigo
-   preencher meu nome e o comentário e enviar, sem precisar estar logado.˜
+   preencher meu nome e o comentário e enviar, sem precisar estar logado.
 3. **Login (`/login`, topo direito do header)** — entro com uma conta de
    professor(a) para liberar o menu **Nova postagem** e o link
    **Administração** no cabeçalho. Uso a credencial de teste do backend:
